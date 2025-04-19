@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guess Word</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-green-100 min-h-screen flex flex-col items-center justify-center p-4">
+  <h1 class="text-3xl font-bold mb-4">Guess Word</h1>
+  <div id="game" class="grid grid-cols-5 gap-1 mb-4"></div>
+  <div class="flex gap-2 mb-2">
+    <button id="submitBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+    <button id="clearBtn" class="bg-gray-500 text-white px-4 py-2 rounded">Clear</button>
+  </div>
+  <div class="mb-2">Selected Word: <span id="currentWord" class="font-bold"></span></div>
+  <div class="mb-2">Score: <span id="score">0</span></div>
+  <div class="mb-2">Level: <span id="level">1</span></div>
+  <div class="mb-4">Goal: <span id="goal">30</span></div>
+  <button id="nextLevelBtn" class="bg-green-600 text-white px-4 py-2 rounded hidden">Next Level</button>
+
+  <div class="w-full max-w-md mt-6">
+    <h2 class="text-xl font-bold mb-2">📖 Words Found</h2>
+    <ul id="foundWordsList" class="list-disc pl-6 space-y-2 text-left"></ul>
+  </div>
+
+  <script>
+    const boardSize = 5;
+    const boardElement = document.getElementById('game');
+    const currentWordElement = document.getElementById('currentWord');
+    const scoreElement = document.getElementById('score');
+    const levelElement = document.getElementById('level');
+    const goalElement = document.getElementById('goal');
+    const nextLevelBtn = document.getElementById('nextLevelBtn');
+    const foundWordsList = document.getElementById('foundWordsList');
+
+    let board = [];
+    let selected = [];
+    let currentWord = '';
+    let score = 0;
+    let level = 1;
+    let goal = 30;
+    let foundWords = [];
+
+    function generateBoard() {
+      board = [];
+      boardElement.innerHTML = '';
+      for (let i = 0; i < boardSize * boardSize; i++) {
+        const letter = String.fromCharCode(65 + Math.floor(Math.random() * 26));
+        board.push(letter);
+        const tile = document.createElement('div');
+        tile.textContent = letter;
+        tile.className = 'bg-white p-4 text-xl font-bold text-center cursor-pointer select-none rounded shadow';
+        tile.dataset.index = i;
+        tile.addEventListener('click', () => selectTile(i));
+        boardElement.appendChild(tile);
+      }
+    }
+
+    function selectTile(index) {
+      if (!selected.includes(index)) {
+        selected.push(index);
+        currentWord += board[index];
+        currentWordElement.textContent = currentWord;
+        boardElement.children[index].classList.add('bg-yellow-300');
+      }
+    }
+
+    function clearSelection() {
+      selected.forEach(i => boardElement.children[i].classList.remove('bg-yellow-300'));
+      selected = [];
+      currentWord = '';
+      currentWordElement.textContent = '';
+    }
+
+    async function checkWordOnline(word) {
+      try {
+        const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word.toLowerCase()}`);
+        if (!response.ok) return null;
+        const data = await response.json();
+        const meaning = data[0]?.meanings[0]?.definitions[0]?.definition || 'No definition found';
+        return meaning;
+      } catch (e) {
+        return null;
+      }
+    }
+
+    async function submitWord() {
+      if (currentWord.length < 2 || foundWords.includes(currentWord)) {
+        clearSelection();
+        return;
+      }
+
+      const meaning = await checkWordOnline(currentWord);
+      if (meaning) {
+        score += currentWord.length * 10;
+        scoreElement.textContent = score;
+        foundWords.push(currentWord);
+
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${currentWord}</strong>: ${meaning}`;
+        foundWordsList.appendChild(li);
+
+        selected.forEach(i => {
+          board[i] = '';
+          boardElement.children[i].textContent = '';
+          boardElement.children[i].classList.remove('bg-yellow-300');
+        });
+
+        if (score >= goal) {
+          nextLevelBtn.classList.remove('hidden');
+        }
+      } else {
+        alert(`"${currentWord}" not found in dictionary.`);
+      }
+
+      clearSelection();
+    }
+
+    function nextLevel() {
+      level++;
+      goal += 20;
+      score = 0;
+      levelElement.textContent = level;
+      goalElement.textContent = goal;
+      scoreElement.textContent = score;
+      nextLevelBtn.classList.add('hidden');
+      foundWords = [];
+      foundWordsList.innerHTML = '';
+      generateBoard();
+    }
+
+    document.getElementById('submitBtn').addEventListener('click', submitWord);
+    document.getElementById('clearBtn').addEventListener('click', clearSelection);
+    nextLevelBtn.addEventListener('click', nextLevel);
+
+    generateBoard();
+  </script>
+</body>
+</html>
