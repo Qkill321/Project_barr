@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Sentence Structure 1</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>คำทักทาย - Formal / Informal / Slang</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f9fc;
+      padding: 30px;
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    .label-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .label {
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .label:hover {
+      transform: scale(1.05);
+    }
+
+    .F { background-color: #d0e7ff; }
+    .IF { background-color: #ffedcc; }
+    .S { background-color: #fbd6e3; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    th {
+      background-color: #3498db;
+      color: white;
+      padding: 15px;
+      font-size: 1.1em;
+    }
+
+    .gray th {
+      background-color: #f39c12;
+    }
+
+    .darkgray th {
+      background-color: #e74c3c;
+    }
+
+    td {
+      padding: 15px;
+      border-top: 1px solid #ddd;
+      vertical-align: top;
+    }
+
+    i {
+      color: #888;
+      font-style: italic;
+    }
+
+    .translation {
+        display: block;
+        margin-left: 30px;
+        color: #7f8c8d;
+        font-style: italic;
+    }
+    
+    .button-container {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .nav-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin: 0 10px;
+        background-color: #2a9d8f;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .nav-button:hover {
+        background-color: #21867a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+   
+    <div class="logo">
+        <img src="images.png" alt="Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="บทที่ 1 รวม.html">บทที่1</a></li>
+            <li><a href="บทที่ 2 รวม.html">บทที่2</a></li>
+            <li><a href="บทที่ 3 รวม.html">บทที่3</a></li>
+
+        </ul>
+    </nav>
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search...">
+        <i class="fa fa-search search-icon"></i>
+    </div>
+</header>
+  <h2>F – Formal / IF – Informal / S – Slang</h2>
+
+  <div class="label-box">
+    <div class="label F">F: Hello - สวัสดี</div>
+    <div class="label IF">IF: Hey / Hi / Hiya / Heya / Howdy - หวัดดี</div>
+    <div class="label S">S: Yo / Alright - หวัดดี / ไง</div>
+    <div class="label F">F: Sir - ท่านผู้ชาย</div>
+    <div class="label F">F: Madam / Ma’am - คุณผู้หญิง</div>
+    <div class="label IF">IF: Mate / Dude / Buddy / Pal - เพื่อนสนิท</div>
+    <div class="label IF">IF: Guys / Gals - พวก / สาวๆ</div>
+    <div class="label S">S: Bro / Sis - เพื่อนสนิทมาก</div>
+  </div>
+
+  <!-- Formal Table -->
+  <table>
+    <tr>
+      <th colspan="2">F - คุณสบายดีไหม</th>
+    </tr>
+    <tr>
+      <td><i>Question</i> คำถาม<br>
+        How are you?<br>
+        How do you do?<br>
+        How is life treating you?
+      </td>
+      <td><i>Answer</i> คำตอบ<br>
+        I am ...<br>
+        I do ...<br>
+        Life is treating me ...
+      </td>
+    </tr>
+  </table>
+
+  <!-- Informal Table -->
+  <table class="gray">
+    <tr>
+      <th colspan="2">IF - เป็นยังไงบ้าง / คุณสบายดีไหม</th>
+    </tr>
+    <tr>
+      <td><i>Question</i> คำถาม<br>
+        How are you doing?<br>
+        How’s it going?<br>
+        Are you good?<br>
+        How are things?
+      </td>
+      <td><i>Answer</i> คำตอบ<br>
+        I’m doing ...<br>
+        It’s going ...<br>
+        I’m ...<br>
+        Things are ...
+      </td>
+    </tr>
+  </table>
+
+  <!-- Slang Table -->
+  <table class="darkgray">
+    <tr>
+      <th colspan="2">S - เป็นยังไงบ้าง / คุณสบายดีไหม</th>
+    </tr>
+    <tr>
+      <td><i>Question</i> คำถาม<br>
+        How’s it happening?<br>
+        How’s it hanging?<br>
+        Ya good?<br>
+        What’s up?<br>
+        Sup?
+      </td>
+      <td><i>Answer</i> คำตอบ<br>
+        I’m ...<br>
+        I’m ...<br>
+        I’m ...<br>
+        I’m ...<br>
+        I’m ...
+      </td>
+    </tr>
+  </table>
+  <div class="button-container">
+    <button onclick="location.href='บทที่ 2 หน้า 2.html'" class="nav-button">← ย้อนกลับบทที่ 2 หน้า 2</button>
+    <button onclick="location.href='บทที่ 2 หน้า 4.html'" class="nav-button">ไปยังบทที่ 2 หน้า 4→</button>
+</div>
+</body>
+</html>

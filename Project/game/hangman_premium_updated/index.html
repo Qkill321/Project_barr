@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hangman Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <h1>Hangman</h1>
+    <div id="rankDisplay" class="rank-card"></div>
+    <div class="top-info">
+      <div>⏱️ Time: <span id="timer">0</span>s</div>
+      <div>⭐ Score: <span id="score">0</span></div>
+    </div>
+
+    <label for="mode">Mode:</label>
+    <select id="mode">
+      <option value="single">Single Player</option>
+      <option value="two">Two Player</option>
+    </select>
+
+    <div id="playerInputForm" style="display:none;">
+      <input type="text" id="customWord" placeholder="Enter a word" />
+      <button id="setCustomWordBtn">Start Game</button>
+    </div>
+
+    <label for="category">Choose Category:</label>
+    <select id="category">
+      <option value="animals">🐶 Animals</option>
+      <option value="technology">💻 Technology</option>
+      <option value="food">🍔 Food</option>
+      <option value="countries">🌍 Countries</option>
+      <option value="sports">🏀 Sports</option>
+    </select>
+    <button id="startBtn">Start Game</button>
+
+    <canvas id="hangmanCanvas" width="200" height="250"></canvas>
+
+    <p id="wordDisplay" class="word"></p>
+    <p id="message" class="message"></p>
+
+    <div id="letters" class="letters"></div>
+    <p>Wrong guesses: <span id="wrongLetters"></span></p>
+
+    <div class="action-buttons">
+      <button id="hintBtn">💡 Hint (-3 pts)</button>
+      <button id="restartBtn">Restart</button>
+      <button id="viewStatsBtn">📊 View Stats</button>
+    </div>
+  </div>
+
+  <button class="toggle-mode" onclick="toggleDarkMode()">🌓 Toggle Mode</button>
+  <div id="stats"></div>
+
+  <div id="introModal" class="modal">
+    <div class="modal-content">
+      <h2>🎮 Welcome to Hangman!</h2>
+      <p>
+        Try to guess the hidden word, one letter at a time.<br>
+        Be careful — you only get 6 wrong guesses!<br>
+        Choose a category or play with a friend, earn points and rise through the ranks! 💪
+      </p>
+      <button id="playBtn">Let's Play!</button>
+    </div>
+  </div>
+
+  <div id="statsModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <h3>📈 Your Game Stats</h3>
+      <canvas id="statsChart" width="300" height="200"></canvas>
+      <button onclick="closeStats()">Close</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
