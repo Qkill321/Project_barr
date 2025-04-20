@@ -1,0 +1,104 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: #e9ecef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 90%; /* ปรับลดความกว้างเล็กน้อย */
+  max-width: 960px; /* กำหนดขนาดสูงสุดที่สมดุล */
+  min-height: 70vh; /* ปรับความสูงขั้นต่ำ */
+  padding: 50px;
+  background-color: #fff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); /* ลดเงาลงอีก */
+  border-radius: 12px; /* ปรับความโค้งมน */
+  box-sizing: border-box;
+  position: relative; /* ทำให้ container เป็น relative เพื่อให้ปุ่ม absolute อ้างอิง */
+  display: flex; /* ใช้ flexbox เพื่อจัดเรียงเนื้อหาภายใน */
+  flex-direction: column; /* จัดเรียงเนื้อหาเป็นแนวตั้ง */
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.8em; /* ปรับขนาด font-size */
+  margin-bottom: 15px;
+  color: #343a40;
+  letter-spacing: 0.05em; /* เพิ่มระยะห่างตัวอักษรเล็กน้อย */
+}
+
+h4 {
+  text-align: center;
+  font-size: 1.6em; /* ปรับขนาด font-size */
+  margin-bottom: 30px;
+  color: #6c757d;
+  font-weight: 300;
+  letter-spacing: 0.03em; /* เพิ่มระยะห่างตัวอักษรเล็กน้อย */
+}
+
+.question {
+  font-weight: 600; /* ปรับความหนา */
+  margin-bottom: 25px;
+  font-size: 1.4em; /* ปรับขนาด font-size */
+  color: #212529;
+  line-height: 1.6; /* เพิ่มความสูงบรรทัด */
+}
+
+.options {
+  margin-bottom: auto; /* ผลัก options ไปด้านบน */
+}
+
+.option {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 1.2em; /* ปรับขนาด font-size */
+  color: #495057;
+  line-height: 1.5; /* เพิ่มความสูงบรรทัด */
+  padding: 10px; /* เพิ่ม padding เล็กน้อย */
+  border-left: 3px solid transparent; /* เพิ่มเส้นขอบด้านซ้ายแบบโปร่งใส */
+  transition: border-left-color 0.2s ease-in-out; /* เพิ่ม transition ให้เส้นขอบ */
+}
+
+.option:hover {
+  border-left-color: #007bff; /* เปลี่ยนสีเส้นขอบเมื่อ hover */
+  background-color: #f8f9fa; /* เพิ่มพื้นหลังเมื่อ hover */
+  cursor: pointer; /* เปลี่ยนเคอร์เซอร์ */
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 24px; /* ปรับขนาด padding */
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3em; /* ปรับขนาด font-size */
+  border-radius: 6px; /* ปรับความโค้งมน */
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.1s ease-in-out; /* เพิ่ม transform transition */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* ลดเงา */
+  position: absolute; /* กำหนดตำแหน่งแบบ absolute */
+  bottom: 20px; /* กำหนดระยะห่างจากขอบล่าง */
+  right: 20px; /* กำหนดระยะห่างจากขอบขวา */
+}
+
+.button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12); /* เพิ่มเงาเมื่อ hover */
+  transform: scale(1.02); /* เพิ่มการขยายเล็กน้อยเมื่อ hover */
+}
+
+.result {
+  text-align: center;
+  margin-top: 40px;
+  font-weight: bold;
+  font-size: 1.6em; /* ปรับขนาด font-size */
+  color: #28a745;
+  letter-spacing: 0.03em; /* เพิ่มระยะห่างตัวอักษรเล็กน้อย */
+}
+
+.hide {
+  display: none;
+}

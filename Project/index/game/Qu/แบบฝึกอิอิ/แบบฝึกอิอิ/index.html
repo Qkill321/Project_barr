@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quiz 10 ข้อ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="quiz-container">
+    <h2 id="question">คำถามจะอยู่ตรงนี้</h2>
+    <ul class="choices" id="choices">
+      <!-- ปุ่มตัวเลือกจะถูกสร้างด้วย JS -->
+    </ul>
+    <button id="next-btn">ถัดไป</button> 
+    <button id="back-btn">ย้อนกลับ</button>
+    <div id="result"></div>
+  </div>
+
+  <!-- Modal for score summary -->
+  <div class="modal" id="scoreModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal">&times;</button>
+      <div class="modal-header">
+        <h2>Quiz Completed!</h2>
+      </div>
+      <div class="score-display" id="finalScore"></div>
+      <div class="question-review" id="questionReview"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

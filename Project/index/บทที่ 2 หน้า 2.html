@@ -1,154 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <title>Sentence Structure 1</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <title>Conversation 2 - Listen and Read Along</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-        }
-
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-        }
-
-        .conversation {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .line {
-            margin-bottom: 15px;
-        }
-
-        .speaker {
-            font-weight: bold;
-            color: #2980b9;
-        }
-
-        .text {
-            margin-left: 10px;
-        }
-
-        .translation {
-            display: block;
-            margin-left: 30px;
-            color: #7f8c8d;
-            font-style: italic;
-        }
-    
-        .button-container {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .nav-button {
-              padding: 10px 20px;
-            font-size: 16px;
-            margin: 0 10px;
-            background-color: #2a9d8f;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .nav-button:hover {
-            background-color: #21867a;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Conversation 2 - Listen and Read Along</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-       
-        <div class="logo">
-            <img src="images.png" alt="Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="บทที่ 1 รวม.html">บทที่1</a></li>
-                <li><a href="บทที่ 2 รวม.html">บทที่2</a></li>
-                <li><a href="บทที่ 3 รวม.html">บทที่3</a></li>
 
-            </ul>
-        </nav>
-        <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search...">
-            <i class="fa fa-search search-icon"></i>
-        </div>
-    </header>
-    <h1>Conversation 2 - Listen and Read Along</h1>
-    <div class="conversation">
+  <div class="navbar">
+    <a href="in.html">หน้าแรก</a>
+    
+    <div class="dropdown">
+      <button class="dropdown-toggle">โหมดเกม 🎮</button>
+      <div class="dropdown-content">
+        <a href="game/hangman_premium_updated/index.html">hangman</a>
+        <a href="game/typinggame/index.html">typinggame</a>
+        <a href="game/Word_guess/game.html">Word guess</a>
+        <a href="game/Word_Sc/index.html">Word Scramble</a>
+        <a href="game/Qu/แบบทดสอบ20ข้อ/แบบทดสอบ20ข้อ/index.html" class="category">แบบทดสอบ1<span></span></a>
+        <a href="game/Qu/แบบฝึก2/แบบฝึก2/index.html" class="category">แบบทดสอบ2<span></span></a>
+        <a href="game/Qu/แบบฝึกอิอิ/แบบฝึกอิอิ/index.html" class="category">แบบทดสอบ3<span></span></a>
+      </div>
+  </div>
 
-        <div class="line">
-            <span class="speaker">A:</span>
-            <span class="text">Hey!</span>
-            <span class="translation">หวัดดี</span>
-        </div>
-
-        <div class="line">
-            <span class="speaker">B:</span>
-            <span class="text">Hey!</span>
-            <span class="translation">หวัดดี</span>
-        </div>
-
-        <div class="line">
-            <span class="speaker">A:</span>
-            <span class="text">How've you been?</span>
-            <span class="translation">ช่วงนี้เป็นยังไงบ้าง</span>
-        </div>
-
-        <div class="line">
-            <span class="speaker">B:</span>
-            <span class="text">I've been alright. How about you?</span>
-            <span class="translation">ผมสบายดี แล้วคุณล่ะ</span>
-        </div>
-
-        <div class="line">
-            <span class="speaker">A:</span>
-            <span class="text">I've been okay. What are you up to?</span>
-            <span class="translation">ผมก็สบายดีเหมือนกัน ตอนนี้ทำอะไรอยู่</span>
-        </div>
-
-        <div class="line">
-            <span class="speaker">B:</span>
-            <span class="text">I'm just watching some TV. You?</span>
-            <span class="translation">ก็แค่ดูทีวีเฉยๆ แล้วคุณล่ะ</span>
-        </div>
-
-        <div class="line">
-            <span class="speaker">A:</span>
-            <span class="text">I'm free. Do you wanna hang out?</span>
-            <span class="translation">ผมก็ว่าง อยากไปเที่ยวกันไหม</span>
-        </div>
-
-        <div class="line">
-            <span class="speaker">B:</span>
-            <span class="text">Sure! Come on over.</span>
-            <span class="translation">ได้สิ คุณมาหาเราก่อน</span>
-        </div>
-
-        <div class="line">
-            <span class="speaker">A:</span>
-            <span class="text">OK! See ya in a bit.</span>
-            <span class="translation">โอเค แล้วเจอกันนะ</span>
-        </div>
-        <button onclick="location.href='บทที่ 2 หน้า 1.html'" class="nav-button">← ย้อนกลับบทที่ 2 หน้า 1</button>
-        <button onclick="location.href='บทที่ 2 หน้า 3.html'" class="nav-button">ไปยังบทที่ 2 หน้า 3→</button>
+    <div class="dropdown">
+      <button class="dropdown-toggle">บทเรียน 👾</button>
+      <div class="dropdown-content">
+        <a href="บทที่ 1 รวม.html">บทที่1</a>
+        <a href="บทที่ 2 รวม.html">บทที่2</a>
+        <a href="บทที่ 3 รวม.html">บทที่3</a>
+      </div>
     </div>
 
+    <a href="#">ติดต่อ 💌</a>
+  </div>
+
+  <div class="container">
+    <h1>Conversation 2 - Listen and Read Along</h1>
+
+    <div class="section conversation">
+      <div class="line">
+        <span class="speaker">A:</span>
+        <span class="text">Hey!</span>
+        <span class="translation">หวัดดี</span>
+      </div>
+
+      <div class="line">
+        <span class="speaker">B:</span>
+        <span class="text">Hey!</span>
+        <span class="translation">หวัดดี</span>
+      </div>
+
+      <div class="line">
+        <span class="speaker">A:</span>
+        <span class="text">How've you been?</span>
+        <span class="translation">ช่วงนี้เป็นยังไงบ้าง</span>
+      </div>
+
+      <div class="line">
+        <span class="speaker">B:</span>
+        <span class="text">I've been alright. How about you?</span>
+        <span class="translation">ผมสบายดี แล้วคุณล่ะ</span>
+      </div>
+
+      <div class="line">
+        <span class="speaker">A:</span>
+        <span class="text">I've been okay. What are you up to?</span>
+        <span class="translation">ผมก็สบายดีเหมือนกัน ตอนนี้ทำอะไรอยู่</span>
+      </div>
+
+      <div class="line">
+        <span class="speaker">B:</span>
+        <span class="text">I'm just watching some TV. You?</span>
+        <span class="translation">ก็แค่ดูทีวีเฉยๆ แล้วคุณล่ะ</span>
+      </div>
+
+      <div class="line">
+        <span class="speaker">A:</span>
+        <span class="text">I'm free. Do you wanna hang out?</span>
+        <span class="translation">ผมก็ว่าง อยากไปเที่ยวกันไหม</span>
+      </div>
+
+      <div class="line">
+        <span class="speaker">B:</span>
+        <span class="text">Sure! Come on over.</span>
+        <span class="translation">ได้สิ คุณมาหาเราก่อน</span>
+      </div>
+
+      <div class="line">
+        <span class="speaker">A:</span>
+        <span class="text">OK! See ya in a bit.</span>
+        <span class="translation">โอเค แล้วเจอกันนะ</span>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button class="next-button" onclick="location.href='บทที่ 2 หน้า 1.html'">← ย้อนกลับบทที่ 2 หน้า 1</button>
+      <button class="next-button" onclick="location.href='บทที่ 2 หน้า 3.html'">ไปยังบทที่ 2 หน้า 3 →</button>
+    </div>
+  </div>
+  <script src="sc.js"></script>
 </body>
 </html>

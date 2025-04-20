@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>แบบฝึกหัดภาษาอังกฤษ</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="quiz-header">
+      <h1>แบบฝึกหัดเติมคำในช่องว่าง</h1>
+      <p class="subtitle">เติมคำที่เหมาะสมลงในช่องว่างให้ถูกต้อง</p>
+    </div>
+    
+    <div class="quiz-content">
+      <div id="questions" class="questions-container"></div>
+      
+      <div class="submit-section">
+        <button onclick="submitAnswers()" class="submit-button">
+          <span>ส่งคำตอบ</span>
+          <svg class="submit-icon" viewBox="0 0 24 24">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <p id="result"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
